@@ -1,9 +1,9 @@
-import  styles from './Button.module.css';
+import  styles from './Button.styles.ts';
 
 interface ButtonProps {
     color?: 'primary' | 'secondary' | 'danger' | 'success';
  }
 
-export function Button(props: ButtonProps) {
-    return <button className={'${styles.button} ${styles}'}>Enviar</button>
+export function Button({ color = 'primary' }: ButtonProps) {
+    return <button className={`${styles.button} ${styles[color]}`}>Enviar</button>
 }
